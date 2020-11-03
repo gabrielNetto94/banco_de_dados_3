@@ -9,9 +9,9 @@ if (isset($_GET['latitude']) && isset($_GET['longitude'])) {
         <iframe width="100%" height="700" src="https://maps.google.com/maps?q=<?php echo $_GET['latitude']; ?>,<?php echo $_GET['longitude']; ?>&output=embed"></iframe>
     </div>
 <?php
-}else{?>
-        <iframe width="100%" height="700" src="https://maps.google.com/maps?q=-14,-51&output=embed"></iframe>
-    <?php
+} else { ?>
+    <iframe width="100%" height="700" src="https://maps.google.com/maps?q=-14,-51&output=embed"></iframe>
+<?php
 }
 ?>
 
@@ -49,7 +49,7 @@ if (isset($_GET['latitude']) && isset($_GET['longitude'])) {
                 echo '<td>' . $row['LONGITUDE'] . '</td>';
             ?>
                 <td><a href="index.php<?php echo '?latitude=' . $row['LATITUDE'] . '&longitude=' . $row['LONGITUDE']; ?>"><i class="material-icons">preview</i></a></td>
-                <td><a href="historyObject.php?id_object=<?php echo $row['ID_OBJECT'] ?>"><i class="material-icons">history</i></a></td>
+                <td><a href="historyObject.php?id_object=<?php echo $row['ID_OBJECT'] . '&latitude=' . $row['LATITUDE'] . '&longitude=' . $row['LONGITUDE']; ?>"><i class="material-icons">history</i></a></td>
                 </tr>
 
             <?php } ?>

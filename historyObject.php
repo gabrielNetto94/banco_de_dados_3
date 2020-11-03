@@ -38,11 +38,9 @@ if (isset($_GET['latitude']) && isset($_GET['longitude'])) {
         <tbody>
 
             <?php
-            if (isset($_GET['id_object'])) {
-                setcookie("id_object", $_GET['id_object']);
-            }
+            
+            $resultSet =  $SQLserver->searchObject($_GET['id_object']);
 
-            $resultSet =  $SQLserver->searchObject($_COOKIE["id_object"]);
             foreach ($resultSet as $row) {
 
                 echo '<tr><td >' . $row['NAME_OBJECT'] . '</td>';
@@ -51,7 +49,7 @@ if (isset($_GET['latitude']) && isset($_GET['longitude'])) {
                 echo '<td>' . $row['TIME_START'] . '</td>';
                 echo '<td>' . $row['TIME_END'] . '</td>';
             ?>
-                <td><a href="historyObject.php<?php echo '?latitude=' . $row['LATITUDE'] . '&longitude=' . $row['LONGITUDE']; ?>"><i class="material-icons">preview</i></a></td>
+                <td><a href="historyObject.php<?php echo '?latitude=' . $row['LATITUDE'] . '&longitude=' . $row['LONGITUDE'] . '&id_object=' . $_GET['id_object']; ?>"><i class="material-icons">preview</i></a></td>
 
                 </tr>
 
