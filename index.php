@@ -1,20 +1,3 @@
-<?php
-
-require_once "./database.php";
-$SQLserver = new SQLserver();
-
-if (isset($_GET['latitude']) && isset($_GET['longitude'])) {
-?>
-    <div class="container">
-        <iframe width="100%" height="700" src="https://maps.google.com/maps?q=<?php echo $_GET['latitude']; ?>,<?php echo $_GET['longitude']; ?>&output=embed"></iframe>
-    </div>
-<?php
-} else { ?>
-    <iframe width="100%" height="700" src="https://maps.google.com/maps?q=-14,-51&output=embed"></iframe>
-<?php
-}
-?>
-
 <html>
 
 <head>
@@ -27,6 +10,22 @@ if (isset($_GET['latitude']) && isset($_GET['longitude'])) {
 
 
 <div class="container">
+    <?php
+
+    require_once "./database.php";
+    $SQLserver = new SQLserver();
+
+    if (isset($_GET['latitude']) && isset($_GET['longitude'])) {
+    ?>
+        <div class="container">
+            <iframe width="100%" height="700" src="https://maps.google.com/maps?q=<?php echo $_GET['latitude']; ?>,<?php echo $_GET['longitude']; ?>&output=embed"></iframe>
+        </div>
+    <?php
+    } else { ?>
+        <iframe width="100%" height="700" src="https://maps.google.com/maps?q=-14,-51&output=embed"></iframe>
+    <?php
+    }
+    ?>
 
     <table class="table table-hover table-striped" id="table-funcionario">
         <thead>
@@ -55,20 +54,5 @@ if (isset($_GET['latitude']) && isset($_GET['longitude'])) {
             <?php } ?>
         </tbody>
     </table>
-    <!--
-    <div class="card card-container">
-
-        <h3>Inserir Objeto</h3>
-        <form class="form-login" action="controller/auth.php" method="POST">
-
-            <input type="text" name="name-object" id="id-name-object" class="form-control" placeholder="Nome do objeto" required autofocus>
-            <input type="number" name="latitude" id="id-latitude" class="form-control" placeholder="Latitude" required>
-            <input type="number" name="longitude" id="id-longitude" class="form-control" placeholder="Longitude" required>
-            <button class="btn btn-default btn-lg btn-block btn-primary" type="submit">Cadastrar</button>
-
-        </form>
-    </div>
-</div>
--->
 
 </html>

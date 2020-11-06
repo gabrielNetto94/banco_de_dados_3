@@ -1,17 +1,3 @@
-<?php
-
-require_once "./database.php";
-$SQLserver = new SQLserver();
-
-if (isset($_GET['latitude']) && isset($_GET['longitude'])) {
-?>
-    <div class="container">
-        <iframe width="100%" height="700" src="https://maps.google.com/maps?q=<?php echo $_GET['latitude']; ?>,<?php echo $_GET['longitude']; ?>&output=embed"></iframe>
-    </div>
-<?php
-}
-?>
-
 <html>
 
 <head>
@@ -22,6 +8,21 @@ if (isset($_GET['latitude']) && isset($_GET['longitude'])) {
 </head>
 
 <div class="container">
+
+    <?php
+
+    require_once "./database.php";
+    $SQLserver = new SQLserver();
+
+    if (isset($_GET['latitude']) && isset($_GET['longitude'])) {
+    ?>
+        <div class="container">
+            <iframe width="100%" height="700" src="https://maps.google.com/maps?q=<?php echo $_GET['latitude']; ?>,<?php echo $_GET['longitude']; ?>&output=embed"></iframe>
+        </div>
+    <?php
+    }
+    ?>
+
     <button onclick="window.location.href='index.php'">Voltar</button>
     <table class="table table-hover table-striped" id="table-funcionario">
         <thead>
@@ -38,7 +39,7 @@ if (isset($_GET['latitude']) && isset($_GET['longitude'])) {
         <tbody>
 
             <?php
-            
+
             $resultSet =  $SQLserver->searchObject($_GET['id_object']);
 
             foreach ($resultSet as $row) {
