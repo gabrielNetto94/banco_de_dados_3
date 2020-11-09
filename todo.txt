@@ -1,0 +1,11 @@
+input = lat e long 
+output = momento parado no ponto
+
+input = lat e long 
+output = quanto tempo ficou parado
+
+input = tempo
+output = lat e long
+
+input = data ini e data fim
+output = periodo de tempo
