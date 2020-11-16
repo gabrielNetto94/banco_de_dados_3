@@ -1,6 +1,7 @@
 <?php
 
-define('DB_HOST', "UTI02DT03SMA01\\SQLEXPRESS");
+//define('DB_HOST', "UTI02DT03SMA01\\SQLEXPRESS");  //pc trabalho
+define('DB_HOST', "ASUSK45VM"); //pc casa
 define('DB_USER', "sa");
 define('DB_PASSWORD', 'Root@root');
 define('DB_NAME', "DB_LOCATION");
