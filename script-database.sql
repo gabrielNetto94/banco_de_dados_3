@@ -34,10 +34,15 @@ insert into object (name) values ('Carro');
 insert into object (name) values ('Bike');
 insert into object (name) values ('Moto');
 
-insert into location( FK_ID_OBJECT, LATITUDE, LONGITUDE) values (1,-29.696678,-53.817198);
---update LOCATION set LATITUDE = -29.684378, LONGITUDE = -53.814286 where ID_LOCATION = 1;
-insert into location( FK_ID_OBJECT, LATITUDE, LONGITUDE) values (2,-29.684378,-53.814286);
-insert into location( FK_ID_OBJECT, LATITUDE, LONGITUDE) values (3,-29.682013,-53.802943);
+insert into location( FK_ID_OBJECT, LATITUDE, LONGITUDE) values (1,-29.69,-53.81);
+update LOCATION set LATITUDE = -30.68, LONGITUDE = -53.81 where ID_LOCATION = 1;
+update LOCATION set LATITUDE = -31.68, LONGITUDE = -52.81 where ID_LOCATION = 1;
+update LOCATION set LATITUDE = -32.68, LONGITUDE = -51.81 where ID_LOCATION = 1;
+update LOCATION set LATITUDE = -32.39, LONGITUDE = -51.41 where ID_LOCATION = 1;
+update LOCATION set LATITUDE = -32.40, LONGITUDE = -51.21 where ID_LOCATION = 1;
+
+insert into location( FK_ID_OBJECT, LATITUDE, LONGITUDE) values (2,-29.62,-53.83);
+insert into location( FK_ID_OBJECT, LATITUDE, LONGITUDE) values (3,-29.63,-53.89);
 
 select * from LOCATION
 for system_time

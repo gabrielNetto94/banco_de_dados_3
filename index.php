@@ -18,11 +18,11 @@
     if (isset($_GET['latitude']) && isset($_GET['longitude'])) {
     ?>
         <div class="container">
-            <iframe width="100%" height="700" src="https://maps.google.com/maps?q=<?php echo $_GET['latitude']; ?>,<?php echo $_GET['longitude']; ?>&output=embed"></iframe>
+            <iframe width="100%" height="700" src="https://maps.google.com/maps?q=<?php echo $_GET['latitude']; ?>,<?php echo $_GET['longitude']; ?>&z=5&output=embed"></iframe>
         </div>
     <?php
     } else { ?>
-        <iframe width="100%" height="700" src="https://maps.google.com/maps?q=-14,-51&output=embed"></iframe>
+        <iframe width="100%" height="700" src="https://maps.google.com/maps?q=-14,-51&z=5&output=embed"></iframe>
     <?php
     }
     ?>
